@@ -11,3 +11,6 @@ Create a simulation of viruses (RNA entities) that are infecting a host (a syste
 * Change the initialization of the population of cells to be uniformly distributed and replot the timeseries of the Gini coefficient and the initial and final distributions of infected cells. (10 pt.) 1 E.g., influenza virus can contain 500-1000 virions inside a cell, while HIV can contain about 1-12 
 
 
+##Results
+###Simulation with 5 cells and 100 exchange events
+![5 cells](./figs/5cells_1000virions_100std_100steps.jpg)
