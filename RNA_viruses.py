@@ -35,9 +35,9 @@ if __name__ == "__main__":
 
 
     #Parameters
-    N = 5 #number of cells
-    mV = 1000 #mean number of virions in a cell
-    sV = 100 #standard deviation of the number of virions in a cell
+    N = 50 #number of cells
+    mV = 10 #mean number of virions in a cell
+    sV = 3 #standard deviation of the number of virions in a cell
 
     #initializing the cells with random number of virions
     VV = np.random.normal(loc = mV, scale = sV, size = N).round() #Normal/Gaussian random numbers are rounded to the closest integer
@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
 
     #simulating exchanges of virions between cells
-    n = 100 #number of virion exchanges
+    n = 10**4 #number of virion exchanges
 
     VV_n = [np.copy(VV)]
     G_n = [G]
@@ -71,12 +71,12 @@ if __name__ == "__main__":
     VV_n = np.array(VV_n)
     G_n = np.array(G_n)
     nn = np.arange(n+1)
-    fig, axs = plt.subplots(2, 1, figsize = (12, 12))
+    fig, axs = plt.subplots(2, 1, figsize = (10, 10))
     for n_cell, V_n in enumerate(VV_n.T):
         axs[0].plot(nn, V_n, label = f'cell {n_cell}')
         axs[0].set_xlabel('#exchanges')
         axs[0].set_ylabel('#virions in a cell')
-        if n_cell > 10:
+        if n_cell > 4:
             break
     axs[0].legend()
     axs[0].set_title(f'#cells: {N}, mean #virions: {mV}, std #virions: {sV}, #exchanges: {n}')

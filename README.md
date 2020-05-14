@@ -10,7 +10,26 @@ Create a simulation of viruses (RNA entities) that are infecting a host (a syste
 * Scale up the simulation to any number of timesteps and initial cells you want (pay attention that there are combinatorial effects of computing time, and your simulation might crash easily, therefore scale up marginally). Plot the time series of the Gini coefficient. Plot the distribution of cells at the start of the simulation and at the end of the simulation. What has changed? 
 * Change the initialization of the population of cells to be uniformly distributed and replot the timeseries of the Gini coefficient and the initial and final distributions of infected cells. (10 pt.) 1 E.g., influenza virus can contain 500-1000 virions inside a cell, while HIV can contain about 1-12 
 
-
 ##Results
 ###Simulation with 5 cells and 100 exchange events
+The numbers of virions in cells and the Gini index for the initial simulation with 5 cells and 100 exchange events are shown in the figure below:
 ![5 cells](./figs/5cells_1000virions_100std_100steps.jpg)
+
+
+###Scaled-up simulation
+Below is the result of a scaled-up simulation with 50 cells and 10000 exchange events
+![50 cells](./figs/50cells_1000virions_100std_10000steps.jpg) 
+
+###Distributions at the start and the end of the simulation
+Due to the relatively narrow width of the initial Gaussian distribution the initial numbers of virions in cells are approximately equal, which results in low Gini coefficient. Later one obtains very uneven distribution of virions between cells and much higher G. The initial and the final distributions are shown below (`N = 50, n = 10000`):
+![50 cells before and after](./figs/distrib_50cells_1000virions_100std_10000steps.jpg)
+
+In order to have a smoother bell-shaped Gaussian curve in the beginning one may run simulation with a greater number of cells, e.g. N = 500, n = 10000:
+![500 cells before and after](./figs/distrib_500cells_1000virions_100std_10000steps.jpg)
+
+###Influenza vs. HIV
+We have run the simulation for Influenza case (taking the average number of virions in the cell to be 1000). We now rerun it for HIV (average number of virions: 10, standard deviation: 3, N = 50, n = 10000)  
+![50 cells](./figs/50cells_10virions_3std_10000steps.jpg)
+
+![50 cells before and after](./figs/distrib_50cells_10virions_3std_10000steps.jpg)
+
